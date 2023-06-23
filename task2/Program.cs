@@ -15,25 +15,36 @@ long Enter(string text)
 
 long num = Enter("enter");
 
-long summ = num;
-
-long summ1 = 0;
-
-while (summ > 9)
+int DigitalRoot(long num)
 {
-    if (summ > 99)
-    {
-        for (long j = summ; j > 0; j /= 10)
-        {
-            summ1 = summ1 + j % 10;
-        }
-        summ = summ1;
-    }
-    else
-    {
-        summ = summ / 10 + summ % 10;
-    }
+    long summ = num;
 
+    long summ1 = 0;
+
+    while (summ > 9)
+    {
+        if (summ > 99)
+        {
+            for (long j = summ; j > 0; j /= 10)
+            {
+                summ1 = summ1 + j % 10;
+            }
+            summ = summ1;
+        }
+        else
+        {
+            summ = summ / 10 + summ % 10;
+        }
+
+    }
+    int num1 = (int)summ;
+    return num1;
 }
 
-System.Console.WriteLine(summ);
+int DigitalRootV2(long num)
+{
+ int DigitalRoot = (1+(num-1)%9);
+ return DigitalRoot;
+}
+
+System.Console.WriteLine(DigitalRoot(num));
